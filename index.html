@@ -44,19 +44,40 @@
       padding-bottom: 5px;
     }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-    .gallery img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-    }
+.gallery figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: -5px;
+  transition: transform 0.3s ease;  /* 부드러운 변환 효과 */
+}
+
+.gallery img:hover {
+  transform: scale(1.1);  /* 10% 확대 */
+  cursor: pointer;         /* 마우스 커서 변경 */
+}
+
+
+.gallery figcaption {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
 
     footer {
       background-color: #1e90ff;
@@ -81,12 +102,32 @@
 
   <section id="gallery">
     <h2>📸 동아리 사진첩</h2>
-    <div class="gallery">
-      <img src="images/photo1.jpg" alt="활동 사진 1">
-      <img src="images/photo2.jpg" alt="활동 사진 2">
-      <img src="images/photo3.jpg" alt="활동 사진 3">
-      <!-- 더 추가 가능 -->
-    </div>
+<section id="gallery">
+  <h2>📸 동아리 사진첩</h2>
+<div class="gallery">
+  <figure>
+    <a href="https://www.instagram.com/p/DHghIFvyhB_/?img_index=1" target="_blank" rel="noopener noreferrer">
+      <img src="images/photo1.jpg" alt="개강총회">
+    </a>
+    <figcaption>개강총회</figcaption>
+  </figure>
+  <figure>
+    <a href="https://www.instagram.com/p/DJFEU2sSHKT/?img_index=1" target="_blank" rel="noopener noreferrer">
+      <img src="images/photo2.jpg" alt="봄 MT">
+    </a>
+    <figcaption>봄 MT</figcaption>
+  </figure>
+  <figure>
+    <a href="https://www.instagram.com/p/DKUQBjvyZk0/?img_index=1" target="_blank" rel="noopener noreferrer">
+      <img src="images/photo3.jpg" alt="유기견 봉사">
+    </a>
+    <figcaption>유기견 봉사</figcaption>
+  </figure>
+</div>
+
+</section>
+
+
   </section>
 
   <section id="plans">

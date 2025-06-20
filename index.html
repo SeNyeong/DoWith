@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do-With 동아리 홈페이지</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f8fc;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #1565c0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover{color:#ffffffa2;}
+    section {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #1565c0;
+      border-bottom: 2px solid #1565c0;
+      padding-bottom: 5px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Do-With 동아리 홈페이지</h1>
+    <p>함께 배우고, 함께 성장하는 우리</p>
+  </header>
+
+  <nav>
+    <a href="#gallery">사진첩</a>
+    <a href="#plans">활동 계획</a>
+  </nav>
+
+  <section id="gallery">
+    <h2>📸 동아리 사진첩</h2>
+    <div class="gallery">
+      <img src="images/photo1.jpg" alt="활동 사진 1">
+      <img src="images/photo2.jpg" alt="활동 사진 2">
+      <img src="images/photo3.jpg" alt="활동 사진 3">
+      <!-- 더 추가 가능 -->
+    </div>
+  </section>
+
+  <section id="plans">
+    <h2>📅 여름 방학 활동 계획</h2>
+    <ul>
+      <li>6월 20일 - 1학기 종강총회</li>
+      <li>7월 15-16일 - 두윗 여름 을왕리 여행</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Do-With 동아리. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

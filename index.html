@@ -4,106 +4,228 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Do-With 동아리 홈페이지</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f8fc;
-      color: #333;
+  <link rel="icon" href="D.ico" type="image/x-icon">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f8fc;
+    color: #333;
+  }
+
+  header {
+    background-color: #1e8fff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav {
+    background-color: #1565c0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: #ffffffa2;
+  }
+
+  section {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  h2 {
+    color: #1565c0;
+    border-bottom: 2px solid #1565c0;
+    padding-bottom: 5px;
+  }
+
+  .more-link {
+    font-size: 14px;
+    color: #1e90ff;
+    text-decoration: none;
+    padding-right: 5px;
+  }
+
+  .more-link:hover {
+    text-decoration: underline;
+    color: red;
+  }
+
+  footer {
+    background-color: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+
+  /* 📆 주요 일정 표 스타일 개선 */
+  #calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+
+  #calendar thead {
+    background-color: #1565c0;
+    color: white;
+  }
+
+  #calendar th, #calendar td {
+    padding: 12px;
+    word-break: keep-all;
+  }
+
+  #calendar tbody tr:nth-child(odd) {
+    background-color: #e3f2fd;
+  }
+
+  #calendar tbody tr:nth-child(even) {
+    background-color: #f1f8ff;
+  }
+
+  #calendar tbody tr:hover {
+    background-color: #bbdefb;
+    transition: background-color 0.2s ease;
+  }
+
+  /* 🌙 다크 모드 대응 */
+  body.dark-mode {
+    background-color: #121212;
+    color: #eeeeee;
+  }
+
+  body.dark-mode header,
+  body.dark-mode footer {
+    background-color: #333;
+    color: #eee;
+  }
+
+  body.dark-mode nav {
+    background-color: #222;
+  }
+
+  body.dark-mode nav a {
+    color: #ccc;
+  }
+
+  body.dark-mode a:hover {
+    color: #ffffff;
+  }
+
+  body.dark-mode .gallery img {
+    border-color: #555;
+  }
+
+  body.dark-mode .officer {
+    background-color: #2a2a2a;
+  }
+
+  body.dark-mode .more-link {
+    color: #aaa;
+  }
+
+  /* 📷 갤러리 스타일 */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .gallery figure {
+    margin: 0;
+    text-align: center;
+  }
+
+  .gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: -5px;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .gallery figcaption {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  /* 📱 모바일 대응 */
+  @media screen and (max-width: 600px) {
+    .gallery img {
+      width: 90%;
+      height: auto;
     }
 
-    header {
-      background-color: #1e90ff;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #1565c0;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover{color:#ffffffa2;}
-    section {
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
+    .gallery {
+      gap: 10px;
     }
 
     h2 {
-      color: #1565c0;
-      border-bottom: 2px solid #1565c0;
-      padding-bottom: 5px;
+      font-size: 20px;
     }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.gallery figure {
-  margin: 0;
-  text-align: center;
-}
-
-.gallery img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  margin: -5px;
-  transition: transform 0.3s ease;  /* 부드러운 변환 효과 */
-}
-
-.gallery img:hover {
-  transform: scale(1.1);  /* 10% 확대 */
-  cursor: pointer;         /* 마우스 커서 변경 */
-}
-
-
-.gallery figcaption {
-  margin-top: 8px;
-  font-size: 16px;
-  color: #333;
-}
-
-
-    footer {
-      background-color: #1e90ff;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+    .gallery figcaption {
+      font-size: 14px;
     }
-  </style>
+
+    #calendar table {
+      font-size: 14px;
+    }
+
+    #calendar th, #calendar td {
+      padding: 8px;
+    }
+  }
+</style>
+
 </head>
 <body>
 
   <header>
-    <h1>Do-With 동아리 홈페이지</h1>
+    <h1>🧩Do-With 동아리 홈페이지</h1>
     <p>함께 배우고, 함께 성장하는 우리</p>
+    <button onclick="toggleDarkMode()" style="margin-top:10px;">🌙 다크모드 전환</button>
   </header>
 
-  <nav>
-    <a href="#gallery">사진첩</a>
-    <a href="#plans">활동 계획</a>
-  </nav>
+<nav>
+  <a href="index.html">홈</a>
+  <a href="about.html">소개</a>
+  <a href="#gallery">사진첩</a>
+  <a href="join.html">가입문의</a>
+</nav>
 
-  <section id="gallery">
-    <h2>📸 동아리 사진첩</h2>
+
+
 <section id="gallery">
-  <h2>📸 동아리 사진첩</h2>
+  <h2>📸 동아리 사진첩 <div style="text-align: right; margin-top: 10px;">
+  <a href="photo.html" class="more-link">더보기 &rsaquo;</a>
+</div>
+</h2>
 <div class="gallery">
   <figure>
     <a href="https://www.instagram.com/p/DHghIFvyhB_/?img_index=1" target="_blank" rel="noopener noreferrer">
@@ -125,22 +247,172 @@
   </figure>
 </div>
 
+
+</section>
+
+<section id="calendar">
+  <h2>📆 1학기 주요 일정</h2>
+  <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; text-align: center;">
+    <thead style="background-color:#1565c0; color:white;">
+      <tr>
+        <th>날짜</th>
+        <th>행사</th>
+        <th>비고</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3월 14일</td>
+        <td>1학기 개강총회</td>
+        <td>비마관 401-1호</td>
+      </tr>
+      <tr>
+        <td>3월 22일, 3월 25일, 5월 18일, 5월 25일</td>
+        <td>유기견 봉사</td>
+        <td>양주 유기견 쉼터</td>
+      </tr>
+      <tr>
+        <td>4월 4일~4월 5일</td>
+        <td>봄 MT</td>
+        <td>대성리</td>
+      </tr>
+      <tr>
+        <td>5월 11일</td>
+        <td>플로깅 봉사</td>
+        <td>석계역-광운대역</td>
+      </tr>
+      <tr>
+        <td>5월 17일</td>
+        <td>사랑의 도시락 봉사</td>
+        <td>비마관</td>
+      </tr>
+      <tr>
+        <td>6월 20일</td>
+        <td>1학기 종강총회</td>
+        <td>비마관 401-1호</td>
+      </tr>
+      <tr>
+        <td>7월 15일~7월16일</td>
+        <td>여름 여행</td>
+        <td>을왕리</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="calendar">
+  <h2>📆 2학기 주요 일정</h2>
+  <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse: collapse; text-align: center;">
+    <thead style="background-color:#1565c0; color:white;">
+      <tr>
+        <th>날짜</th>
+        <th>행사</th>
+        <th>비고</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>9월 10일</td>
+        <td>2학기 개강총회</td>
+        <td>비마관 409호</td>
+      </tr>
+      <tr>
+        <td>9월 13일</td>
+        <td>공릉청소년문화정보센터 꿈나르샤 축제 봉사</td>
+        <td>공릉동근린공원</td>
+      </tr>
+      <tr>
+        <td>9월 15일~9월 16일</td>
+        <td>친해지길 바라</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>9월 18일</td>
+        <td>동연제 부스 운영</td>
+        <td>광운대학교</td>
+      </tr>
+      <tr>
+        <td>9월 20일</td>
+        <td>공릉청소년문화정보센터 교육 봉사</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>9월 23일</td>
+        <td>플로깅 봉사</td>
+        <td>광운대학교 인근</td>
+      </tr>
+      <tr>
+        <td>9월 26일</td>
+        <td>전국발달장애인 댄스 경연대회 진행 봉사</td>
+        <td>광운대학교 동해문화예술관 소극장</td>
+      </tr>
+      <tr>
+        <td>9월 27일</td>
+        <td>도봉동청소년문화의집 가을축제 봉사</td>
+        <td>도봉동청소년문화의집</td>
+      </tr>
+      <tr>
+        <td>10월 1일</td>
+        <td>유기견 키트 만들기 봉사</td>
+        <td>미정</td>
+      </tr>
+      <tr>
+        <td>10월 13일</td>
+        <td>중간고사 간식행사</td>
+        <td>두윗 동아리방</td>
+      </tr>
+      <tr>
+        <td>10/31~11/1</td>
+        <td>가을 MT</td>
+        <td>미정</td>
+      </tr>
+      <tr>
+        <td>미정</td>
+        <td>유기견 봉사</td>
+        <td>미정</td>
+      </tr><tr>
+        <td>미정</td>
+        <td>연탄 봉사</td>
+        <td>미정</td>
+      </tr>
+      <tr>
+        <td>미정</td>
+        <td>김장 봉사</td>
+        <td>미정</td>
+      </tr>
+      <tr>
+        <td>12월 19일~12월 20일</td>
+        <td>두윗 송년회</td>
+        <td>미정</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 
-  </section>
 
-  <section id="plans">
-    <h2>📅 여름 방학 활동 계획</h2>
-    <ul>
-      <li>6월 20일 - 1학기 종강총회</li>
-      <li>7월 15-16일 - 두윗 여름 을왕리 여행</li>
-    </ul>
-  </section>
 
   <footer>
     <p>&copy; 2025 Do-With 동아리. All rights reserved.</p>
   </footer>
+
+<script>
+  // 페이지 로드 시 저장된 테마 확인
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  // 다크모드 토글 함수
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    // 저장 또는 제거
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.removeItem('theme');
+    }
+  }
+</script>
 
 </body>
 </html>

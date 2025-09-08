@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가입 문의 - Do-With</title>
+    <link rel="icon" href="D.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f8fc;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #1565c0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #ffffffa2;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      flex: 1;
+    }
+
+    h2 {
+      color: #1565c0;
+      border-bottom: 2px solid #1565c0;
+      padding-bottom: 8px;
+    }
+
+    .contact {
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    .contact a {
+      color: #1e90ff;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* 🌙 다크모드 */
+    body.dark-mode {
+      background-color: #121212;
+      color: #eeeeee;
+    }
+
+    body.dark-mode header,
+    body.dark-mode footer {
+      background-color: #333;
+      color: #eee;
+    }
+
+    body.dark-mode nav {
+      background-color: #222;
+    }
+
+    body.dark-mode nav a {
+      color: #ccc;
+    }
+
+    body.dark-mode a:hover {
+      color: #ffffff;
+    }
+
+    body.dark-mode .gallery img {
+      border-color: #555;
+    }
+
+    body.dark-mode .officer {
+      background-color: #2a2a2a;
+    }
+
+    body.dark-mode .contact a {
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📬가입 문의</h1>
+    <button onclick="toggleDarkMode()" style="margin-top:10px;">🌙 다크모드 전환</button>
+  </header>
+
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="about.html">소개</a>
+    <a href="join.html">가입문의</a>
+  </nav>
+
+  <section>
+    <h2>✨ 두윗에 관심 있는 당신을 환영합니다!</h2>
+    <div class="contact">
+      <p>궁금한 점이나 가입 신청은 아래 연락처를 이용해주세요:</p>
+      <ul>
+        <li>☎️ 전화번호: <a href="">010-2511-4361</a></li>
+        <li>📸 인스타그램 DM: <a href="https://www.instagram.com/do_with_kw/" target="_blank">@do_with_kw</a></li>
+        <li>📋 가입폼: <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZ6kg_rGUeeWlohfY6LY-o7G8r2nzfw5kk6nbsqKVZk_xyaA/viewform" target="_blank">Google 지원서 링크</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Do-With 동아리. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 페이지 로드 시 저장된 테마 확인
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    // 다크모드 토글 함수
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.removeItem('theme');
+      }
+    }
+  </script>
+
+</body>
+</html>

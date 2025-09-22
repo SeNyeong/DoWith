@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유기견 봉사 사진첩 - Do-With</title>
+    <link rel="stylesheet" href="dog.css">
+</head>
+<body>
+    <header>
+        <h1>Do-With 동아리</h1>
+        <p class="subtitle">함께 배우고, 함께 성장하는 우리</p>
+        <button onclick="toggleDarkMode()" class="dark-mode-btn">🌙 다크모드 전환</button>
+    </header>
+
+    <nav>
+        <a href="index.html">홈</a>
+        <a href="about.html">소개</a>
+        <a href="dog.html">유기견 사진첩</a>
+        <a href="schedule.html">주요 일정</a>
+        <a href="join.html">가입문의</a>
+    </nav>
+
+    <main>
+        <section id="volunteer-gallery">
+            <div class="section-header">
+                <h2>📸 유기견 봉사 사진첩</h2>
+            </div>
+            
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog1.jpg" alt="잠자는 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog2.jpg" alt="뛰노는 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog3.jpg" alt="쳐다보는 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog4.jpg" alt="코코">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog5.jpg" alt="부원들과 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog19.jpg" alt="댕댕이들과 산책">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog7.jpg" alt="강지석과 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog8.jpg" alt="고은성과 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog9.jpg" alt="김민서와 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog10.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog11.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog12.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog13.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog14.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog15.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog16.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog17.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog18.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog6.jpg" alt="댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog20.jpg" alt="하은지와 댕댕이">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog21.jpg" alt="만복쓰">
+                    </a>
+                </figure>
+                <figure class="gallery-item">
+                    <a href="#">
+                        <img src="dog/dog22.jpg" alt="유하준">
+                    </a>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <div id="image-modal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="expanded-image">
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Do-With 동아리. All rights reserved.</p>
+    </footer>
+
+<div id="image-modal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="expanded-image">
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+        <a href="#" id="download-btn" class="download-btn" download>다운로드</a>
+    </div>
+
+
+    <script src="dog.js"></script> </body>
+</html>

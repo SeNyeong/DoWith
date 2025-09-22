@@ -1,0 +1,315 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f8fc;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1565c0;
+    text-decoration: underline;
+}
+
+/* 헤더 & 네비게이션 */
+header {
+    background-color: #1e8fff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    word-break: keep-all; /* 단어가 줄바꿈되지 않도록 방지 */
+}
+
+.subtitle {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+.dark-mode-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1565c0;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    background-color: #1e90ff;
+}
+
+nav {
+    background-color: #1565c0;
+    padding: 10px;
+    text-align: center;
+    overflow-x: auto; /* 가로 스크롤 가능하게 */
+    white-space: nowrap; /* 네비게이션 메뉴가 한 줄로 표시되게 */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffffa2;
+}
+
+/* 섹션 & 제목 */
+section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #1565c0;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #1565c0;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.more-link {
+    font-size: 0.9rem;
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.more-link:hover {
+    text-decoration: underline;
+    color: red;
+}
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1e90ff;
+    color: white;
+    margin-top: 40px;
+}
+
+/* 다크 모드 */
+body.dark-mode {
+    background-color: #121212;
+    color: #eeeeee;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #333;
+    color: #eee;
+}
+
+body.dark-mode nav {
+    background-color: #222;
+}
+
+body.dark-mode h2 {
+    color: #bbdefb;
+    border-bottom: 2px solid #bbdefb;
+}
+
+body.dark-mode nav a {
+    color: #ccc;
+}
+
+body.dark-mode nav a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .gallery img {
+    border-color: #555;
+}
+
+body.dark-mode .gallery figcaption {
+    color: #ccc;
+}
+
+body.dark-mode .more-link {
+    color: #aaa;
+}
+
+body.dark-mode thead {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode tbody tr:nth-child(odd) {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode tbody tr:nth-child(even) {
+    background-color: #222222;
+}
+
+body.dark-mode tbody tr:hover {
+    background-color: #4a4a4a;
+}
+body.dark-mode .carousel-slide figcaption {
+    background-color: #333; /* 다크 모드 캡션 배경색 */
+    color: #eee;
+}
+
+
+/* 모바일 최적화 (768px 이하) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* 헤더 제목 크기 조정 */
+    }
+
+    nav {
+        padding: 10px 5px;
+    }
+    
+    nav a {
+        margin: 0 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem; /* 섹션 제목 크기 조정 */
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery {
+        gap: 15px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+    .carousel-slide {
+        width: 80%; /* 모바일에서 슬라이드 너비를 80%로 조정 */
+    }
+
+    .carousel-slide.prev-slide,
+    .carousel-slide.next-slide {
+        transform: scale(0.6); /* 옆에 있는 슬라이드를 더 작게 만들어 공간 확보 */
+    }
+}
+/* dog.html 전용 스타일 */
+
+/* 갤러리 컨테이너 */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 화면 크기에 따라 열 개수 자동 조절 */
+    gap: 15px;
+    padding: 15px;
+    justify-content: center;
+}
+
+/* 갤러리 아이템 (사진) */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* 캡션 숨기기 */
+.gallery-item figcaption {
+    display: none;
+}
+
+/* 이미지 확대 팝업 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 화면에 고정 */
+    z-index: 100; /* 다른 요소 위에 표시 */
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%; /* 모바일에서 더 넓게 보이도록 조정 */
+    max-width: 700px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px; /* 모바일에서 위치 조정 */
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.download-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #1e90ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 150px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #1565c0;
+}
